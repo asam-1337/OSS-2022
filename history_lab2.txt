@@ -1,0 +1,62 @@
+    1  mkdir test
+    2  cd test/
+    3  touch file
+    4  chmod 000 file
+    5  ll file
+    6  chmod 000 file
+    7  echo 'тест' > file
+    8  cat file
+    9  chmod 200 file
+   10  ll file
+   11  echo 'test' > file
+   12  chmod 240 file && ll
+   13  cat file
+   14  chmod 640 file && ll
+   15  cat file
+   16  mkdir dir && touch dir/new_file && echo 'file2' > dir/new_file
+   17  cd dir
+   18  ls -l
+   19  cat new_file 
+   20  cd ../
+   21  chmod 660 dir
+   22  ll dir
+   23  rm dir/new_file 
+   24  ls -l
+   25  cat dir/new_file 
+   26  chown root
+   27  chown root file
+   28  chgrp root file
+   29  umask 177 && touch file1 && ll
+   30  umask 111 && touch file2 && ll
+   31  cat file
+   32  ll
+   33  history
+   34  ls -lR
+   35  chmod 442 dir/new_file 
+   36  sudo chmod 662 dir/new_file 
+   37  chmod 775 dir
+   38  ls -lR
+   39  cd
+   40  history > OSS_LABS/history_lab2.txt
+   
+   
+    1  sudo su
+    2  sudo chown root file
+    3  cat file
+    4  sudo chmod 440 file
+    5  cat file
+
+   
+   
+   $ ls -lR
+.:
+total 4
+drwxrwxr-x. 1 jon-livsi jon-livsi 16 Oct 17 12:24 dir
+-r--r-----. 1 root      jon-livsi  5 Oct 17 12:19 file
+-rw-------. 1 jon-livsi jon-livsi  0 Oct 17 12:35 file1
+-rw-rw-rw-. 1 jon-livsi jon-livsi  0 Oct 17 12:37 file2
+
+./dir:
+total 4
+-rw-rw-r--. 1 jon-livsi jon-livsi 6 Oct 17 12:24 new_file
+
